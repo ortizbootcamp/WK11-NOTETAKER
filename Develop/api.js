@@ -14,7 +14,7 @@ module.exports = function (app) {
         .catch(err => console.log(err))
     });
 
-    app.post("./api/notes", async function (req, res) {
+    app.post("/api/notes", async function (req, res) {
         let writeNew = req.body;
         let numb = Math.floor(Math.random() * 100 +1);
 
@@ -33,7 +33,7 @@ module.exports = function (app) {
         res.json(nNote);
     });
 
-    app.delete("./api/notes/:id", async function (req, res) {
+    app.delete("/api/notes/:id", async function (req, res) {
         let noteId = req.params.id;
         let allStr = await fileRead("./db/db.json", "utf8");
 
