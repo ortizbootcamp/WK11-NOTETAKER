@@ -7,7 +7,7 @@ const fileWrite = util.promisify(fs.writeFile);
 
 module.exports = function (app) {
     app.get("/api/notes", function (req, res) {
-        (fileRead("./Develop/db/debugger.json", "utf8"))
+        (fileRead("./db/debugger.json", "utf8"))
         .then(listNotes => {
             res.json(JSON.parse(listNotes))
         })
