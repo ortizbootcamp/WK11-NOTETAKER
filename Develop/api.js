@@ -18,7 +18,7 @@ module.exports = function (app) {
         let writeNew = req.body;
         let numb = Math.floor(Math.random() * 100 +1);
 
-        let nPr = num.toString();
+        let nPr = numb.toString();
         let prop = {"id": nPr}
         let nObj = [{"title": req.body.title, "text": req.body.text, ...prop}]
         let nString = await fileRead("./db/db.json", "utf8");
